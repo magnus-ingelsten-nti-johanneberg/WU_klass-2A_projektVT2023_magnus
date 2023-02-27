@@ -2,7 +2,7 @@
 
 * {
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: rgb(45, 42, 42);
     list-style: none;
     text-decoration: none;
     margin: 0;
@@ -10,13 +10,13 @@
 }
 
 body {
-    background-color:rgb(14, 10, 12); 
+    background-color:rgb(255, 255, 255); 
 }
 
 #grid_wrapper {
     display: grid;
     grid-template-columns: minmax(200px, 1fr) 200px;
-    grid-template-rows: 100px 80px 300px 400px 400px 100px;
+    grid-template-rows: 140px min-content 300px 400px 400px 100px;
     grid-template-areas: 
     "he he"
     "na na"
@@ -31,8 +31,23 @@ body {
     grid-area: he;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    background-color: aquamarine;
 }
+
+#burger {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    height: 100px;
+    width: 100px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
 #nav {
     grid-area: na;
 }
@@ -62,15 +77,23 @@ body {
     grid-area: fo;
 }
 
-nav, #list_pages {
-    background-color: rgb(26, 19, 22);
-}
-
 #list_pages {
-    height: 80px;
+    background-color: rgb(232, 181, 203);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    transition: 400ms;
+}
+
+.list_inactive {
+    transition: 400ms;
+    height: 0px;
+    opacity: 0%;
+}
+.list_active {
+    transition: 400ms;
+    height: 80px;
+    opacity: 100%;
 }
 
 #text_quote {
@@ -78,5 +101,29 @@ nav, #list_pages {
 }
 
 #text_header {
-    font-size: 4rem;
+    font-size: 4rem
 }
+
+#big_buy_button {
+    width: 200px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 1.8rem;
+    font-weight: 1000;
+    color: white;
+    background-color:rgb(49, 127, 196);
+    box-shadow: 0 0 18px 0 rgb(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: row-reverse;
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    bottom: 30px;
+    left: 100vmax;
+    margin: 30px;
+    transition: 500ms;
+}
+
+#big_buy_button:hover{
+    transition: 500ms;
+    transform: scale(1.05);}

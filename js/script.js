@@ -1,9 +1,10 @@
 const burger = document.getElementById('burger')
-const nav = document.getElementById('list_burger')
+const list = document.getElementById('list_pages')
 
 function toggleMenu() {
     burger.classList.toggle('burger_toggle')
-    nav.classList.toggle('nav_active')
+    list.classList.toggle('list_inactive')
+    list.classList.toggle('list_active')
 }
 
 burger.addEventListener('click', toggleMenu)
