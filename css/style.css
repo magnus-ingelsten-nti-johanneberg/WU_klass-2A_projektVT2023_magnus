@@ -2,24 +2,31 @@
 
 * {
     font-family: 'Poppins', sans-serif;
-    color: rgb(45, 42, 42);
     list-style: none;
     text-decoration: none;
     margin: 0;
     padding: 0;
 }
 
+body {
+    min-height: 100vh;
+}
 
-#grid_wrapper {
+h2 {
+    font-size: 1.7rem;
+}
+
+#grid_wrapper_index {
     display: grid;
-    grid-template-columns: minmax(200px, 1fr) 200px;
-    grid-template-rows: 140px min-content 300px 400px 400px 100px;
+    grid-template-columns: minmax(200px, 1fr) 1fr;
+    grid-template-rows: 140px min-content 250px min-content min-content min-content min-content;
     grid-template-areas: 
     "he he"
     "na na"
     "s1 s1"
     "s2 s2"
-    "s3 s3"
+    "s3 s4"
+    "s5 s5"
     "fo fo"
     ;
 }
@@ -29,6 +36,7 @@ section {
     margin-right: 7vw;
     overflow: hidden;
     background-color: white;
+    color: rgb(45, 42, 42);
 }
 
 #header {
@@ -36,16 +44,16 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: aquamarine;
+    background-color: rgb(255, 65, 160);
     overflow: hidden;
-    padding-left: 7vw;
-    padding-right: 7vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 #burger {
     height: min-content;
     width: min-content;
-    color: black;
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,11 +66,20 @@ section {
 }
 
 #burger_part {
-    background-color: rgb(45, 42, 42);
-    color: black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-size: 1rem;
-    height: 15px;
-    width:15px;
+    height: 11px;
+    width:11px;
+    border-radius: 10px;
+}
+
+#burger_part2 {
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    height: 11px;
+    width:11px;
     border-radius: 10px;
 }
 
@@ -72,8 +89,20 @@ section {
     transition: 500ms;
 }
 
+.burger_active #burger_part2{
+    margin: 0px;
+    transform: scale(1.5);
+    opacity: 0;
+    transition: 500ms;
+}
+
 .burger_inactive #burger_part{
-    margin: 5px;
+    margin: 3px;
+    transition: 500ms;
+}
+
+.burger_inactive #burger_part2{
+    margin: 3px;
     transition: 500ms;
 }
 
@@ -82,8 +111,8 @@ section {
 }
 #section1 {
     grid-area: s1;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -92,6 +121,7 @@ section {
 
 #section2 {
     grid-area: s2;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -106,17 +136,42 @@ section {
     grid-area: s4;
 }
 
+#section5 {
+    grid-area: s5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 70px;
+}
+
 #footer {
     grid-area: fo;
-    background-color: aquamarine;
+    color: white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+    padding-top: 7vw;
+    padding-bottom: 7vw;
+}
+
+#article_index {
+    padding-bottom: 70px;
 }
 
 #list_pages {
-    background-color: rgb(232, 181, 203);
+    background-color: rgb(0, 0, 0);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     transition: 400ms;
+}
+
+a {
+    color: white;
+    font-weight: 1000;
 }
 
 .list_inactive {
@@ -132,15 +187,32 @@ section {
 
 #text_quote {
     font-style: italic;
+    text-align: center;
 }
 
 #text_header {
-    font-size: 3.5vw
+    font-size: 3.5vw;
+    color: white;
 }
 
 #section_title {
     font-weight: 5000;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+#bigger_buy_button {
+    width: 300px;
+    height: 100px;
+    border-radius: 24px;
     font-size: 2rem;
+    font-weight: 1000;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 65, 160);
+    border: 5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #big_buy_button {
@@ -164,6 +236,24 @@ section {
     transition: 500ms;
 }
 
+
 #big_buy_button:hover{
     transition: 500ms;
-    transform: scale(1.05);}
+    transform: scale(1.05);
+}
+
+
+
+
+@media screen and (min-width: 800px) {
+
+    #burger {
+        display: none;
+    }
+    
+    #list_pages {
+        height: 80px;
+        opacity: 100%;
+    }
+
+}
