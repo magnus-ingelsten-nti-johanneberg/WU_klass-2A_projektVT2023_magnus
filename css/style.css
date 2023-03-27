@@ -10,6 +10,7 @@
 
 body {
     min-height: 100vh;
+    width: 100%;
 }
 
 h2 {
@@ -19,17 +20,62 @@ h2 {
 #grid_wrapper_index {
     display: grid;
     grid-template-columns: minmax(200px, 1fr) 1fr;
-    grid-template-rows: 140px min-content 250px min-content min-content min-content min-content;
+    grid-template-rows: 140px min-content min-content min-content min-content min-content min-content min-content;
+    grid-template-areas: 
+    "he he"
+    "na na"
+    "sq sq"
+    "st st"
+    "s3 s3"
+    "s4 s4"
+    "sb sb"
+    "fo fo"
+    ;
+}
+
+#grid_wrapper_buycourse {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 1fr;
+    grid-template-rows: 140px min-content min-content min-content min-content min-content min-content;
+    grid-template-areas: 
+    "he he"
+    "na na"
+    "st st"
+    "ac ac"
+    "fo fo"
+    ;
+}
+
+#grid_wrapper_aboutmusic {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 1fr;
+    grid-template-rows: 140px min-content min-content min-content min-content min-content min-content;
+    grid-template-areas: 
+    "he he"
+    "na na"
+    "st st"
+    "sl sl"
+    "sr sr"
+    "sb sb"
+    "fo fo"
+    ;
+}
+
+#grid_wrapper_aboutme {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 1fr;
+    grid-template-rows: 140px min-content min-content min-content min-content min-content min-content;
     grid-template-areas: 
     "he he"
     "na na"
     "s1 s1"
     "s2 s2"
     "s3 s4"
-    "s5 s5"
+    "sb sb"
     "fo fo"
     ;
 }
+
 
 section {
     margin-left: 7vw; 
@@ -109,19 +155,20 @@ section {
 #nav {
     grid-area: na;
 }
-#section1 {
-    grid-area: s1;
+#section_quotes {
+    grid-area: sq;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
-#section2 {
-    grid-area: s2;
-    padding-bottom: 30px;
+#section_page_title {
+    grid-area: st;
+    padding-top: 25px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -136,12 +183,33 @@ section {
     grid-area: s4;
 }
 
-#section5 {
-    grid-area: s5;
+#section_buy {
+    grid-area: sb;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 35px;
     padding-bottom: 70px;
+}
+
+#section_left {
+    grid-area: sl;
+}
+
+#section_right {
+    grid-area: sr;
+
+}
+
+
+#img_aboutmusic {
+    width: 100%;
+    border-radius: 2vw;
+}
+
+#article_aboutmusic {
+    padding-top: 0px;
+    padding-bottom: 25px;
 }
 
 #footer {
@@ -157,7 +225,7 @@ section {
 }
 
 #article_index {
-    padding-bottom: 70px;
+    padding-bottom: 35px;
 }
 
 #list_pages {
@@ -172,6 +240,7 @@ section {
 a {
     color: white;
     font-weight: 1000;
+    font-size: 3vw;
 }
 
 .list_inactive {
@@ -195,7 +264,7 @@ a {
     color: white;
 }
 
-#section_title {
+#page_title {
     font-weight: 5000;
     font-size: 3.5rem;
     text-align: center;
@@ -242,7 +311,27 @@ a {
     transform: scale(1.05);
 }
 
+#article_checkout {
+    grid-area: ac;
+    display: flex;
+    flex-direction: column;
+    width: 100%
+;}
 
+#input_checkout {
+    width: 80%;
+    margin: 5px 0;
+    padding: 12px 5px;
+    box-sizing: border-box ;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#input_checkout:focus {
+    border: none;
+    border-bottom: 2px solid rgb(255, 65, 160);
+    outline-width: 0;
+}
 
 
 @media screen and (min-width: 800px) {
@@ -254,6 +343,41 @@ a {
     #list_pages {
         height: 80px;
         opacity: 100%;
+    }
+
+    a {
+        font-size: 1rem
+    }
+    
+    #grid_wrapper_index {
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr) 1fr;
+        grid-template-rows: 140px min-content min-content min-content min-content min-content min-content min-content;
+        grid-template-areas: 
+        "he he"
+        "na na"
+        "sq sq"
+        "st st"
+        "s3 s4"
+        "sb sb"
+        "fo fo"
+        ;
+
+    }
+
+    #grid_wrapper_aboutmusic {
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr) 1fr;
+        grid-template-rows: 140px min-content min-content min-content min-content min-content min-content;
+        grid-template-areas: 
+        "he he"
+        "na na"
+        "st st"
+        "sl sr"
+        "sl sr"
+        "sb sb"
+        "fo fo"
+        ;
     }
 
 }
