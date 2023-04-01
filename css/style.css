@@ -42,6 +42,7 @@ h2 {
     "na na"
     "st st"
     "ac ac"
+    "sb sb"
     "fo fo"
     ;
 }
@@ -63,14 +64,15 @@ h2 {
 
 #grid_wrapper_aboutme {
     display: grid;
-    grid-template-columns: minmax(200px, 1fr) 1fr;
+    grid-template-columns: minmax(200px, 2fr) 1fr;
     grid-template-rows: 140px min-content min-content min-content min-content min-content min-content;
     grid-template-areas: 
     "he he"
     "na na"
-    "s1 s1"
-    "s2 s2"
-    "s3 s4"
+    "st st"
+    "a1 a1"
+    "a2 a2"
+    "a3 a3"
     "sb sb"
     "fo fo"
     ;
@@ -120,7 +122,7 @@ section {
     border-radius: 10px;
 }
 
-#burger_part2 {
+#burger_part2, #burger_part3 {
     background-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
     font-size: 1rem;
@@ -142,12 +144,24 @@ section {
     transition: 500ms;
 }
 
+.burger_active #burger_part3{
+    margin: 0px;
+    transform: scale(1.5);
+    opacity: 0;
+    transition: 500ms;
+}
+
 .burger_inactive #burger_part{
     margin: 3px;
     transition: 500ms;
 }
 
 .burger_inactive #burger_part2{
+    margin: 3px;
+    transition: 500ms;
+}
+
+.burger_inactive #burger_part3{
     margin: 3px;
     transition: 500ms;
 }
@@ -198,16 +212,14 @@ section {
 
 #section_right {
     grid-area: sr;
-
 }
 
-
-#img_aboutmusic {
+.img_aboutmusic {
     width: 100%;
     border-radius: 2vw;
 }
 
-#article_aboutmusic {
+.article_aboutmusic {
     padding-top: 0px;
     padding-bottom: 25px;
 }
@@ -224,7 +236,7 @@ section {
     padding-bottom: 7vw;
 }
 
-#article_index {
+.article_index {
     padding-bottom: 35px;
 }
 
@@ -254,7 +266,7 @@ a {
     opacity: 100%;
 }
 
-#text_quote {
+.text_quote {
     font-style: italic;
     text-align: center;
 }
@@ -262,10 +274,11 @@ a {
 #text_header {
     font-size: 3.5vw;
     color: white;
+    text-shadow: 0.3vw 0.3vw 0 black;
 }
 
 #page_title {
-    font-weight: 5000;
+    font-weight: 1000;
     font-size: 3.5rem;
     text-align: center;
 }
@@ -282,6 +295,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: 3px 3px 0 black;
 }
 
 #big_buy_button {
@@ -315,11 +329,12 @@ a {
     grid-area: ac;
     display: flex;
     flex-direction: column;
-    width: 100%
-;}
+    align-items: center;
+    width: 100%;
+}
 
-#input_checkout {
-    width: 80%;
+.input_checkout {
+    width: 60%;
     margin: 5px 0;
     padding: 12px 5px;
     box-sizing: border-box ;
@@ -327,10 +342,47 @@ a {
     border-bottom: 2px solid black;
 }
 
-#input_checkout:focus {
+.input_checkout:focus {
     border: none;
     border-bottom: 2px solid rgb(255, 65, 160);
     outline-width: 0;
+    outline: none;
+}
+
+.article_aboutme {
+    grid-area: am;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3.5vw; 
+    margin-right: 3.5vw;
+    overflow: hidden;
+    background-color: white;
+    padding-bottom: 35px;
+}
+
+#article_aboutme_1 {
+    grid-area: a1;
+}
+
+#article_aboutme_2 {
+    grid-area: a2;
+}
+
+#article_aboutme_3 {
+    grid-area: a3;
+}
+
+#aside_aboutme {
+    display:none
+}
+
+
+#img_aboutme {
+    height: 100%;
+    border-radius: 2vw;
+    width: 35vw;
+    object-fit: none;
 }
 
 
@@ -378,6 +430,32 @@ a {
         "sb sb"
         "fo fo"
         ;
+    }
+
+    #grid_wrapper_aboutme {
+        display: grid;
+        grid-template-columns: minmax(200px, 2fr) 1fr;
+        grid-template-rows: 140px min-content min-content min-content min-content min-content min-content;
+        grid-template-areas: 
+        "he he"
+        "na na"
+        "st st"
+        "a1 as"
+        "a2 as"
+        "a3 as"
+        "sb sb"
+        "fo fo"
+        ;
+    }
+
+    #aside_aboutme {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        grid-area: as;
+        margin-right: 3.5vw;
+        background-color: white;
+        padding-bottom: 35px;
     }
 
 }
