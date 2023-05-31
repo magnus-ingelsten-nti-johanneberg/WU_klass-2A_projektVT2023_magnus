@@ -247,6 +247,8 @@ section {
     align-items: center;
     justify-content: space-evenly;
     transition: 400ms;
+    margin-left: 0; 
+    margin-right: 0;
 }
 
 a {
@@ -382,7 +384,7 @@ a {
     height: 100%;
     border-radius: 2vw;
     width: 35vw;
-    object-fit: none;
+    object-fit:cover;
 }
 
 
@@ -455,7 +457,6 @@ a {
         grid-area: as;
         margin-right: 3.5vw;
         background-color: white;
-        padding-bottom: 35px;
     }
 
 }
